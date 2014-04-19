@@ -1,0 +1,9 @@
+> hello world running on port 8000
+Throwing error now.
+
+/home/ubuntu/nailed-it-in/simple-server.js:15
+  throw new Error('User generated fault.');
+        ^
+Error: User generated fault.
+    at null._onTimeout (/home/ubuntu/nailed-it-in/simple-server.js:15:9)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)

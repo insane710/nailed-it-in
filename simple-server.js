@@ -1,7 +1,7 @@
 var util = require('util'),  
-    http = require('http');
+    http = require('http'),
 	fs = require('fs'),
-    index;
+        index;
 
 fs.readFile('./index.html', function (err, data) {
     if (err) {
@@ -11,8 +11,8 @@ fs.readFile('./index.html', function (err, data) {
 });
 
 http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.write(data);
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.write(index);
   res.end();
 }).listen(8000);
 

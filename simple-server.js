@@ -1,9 +1,18 @@
 var util = require('util'),  
     http = require('http');
+	fs = require('fs'),
+    index;
 
-http.createServer(function (req, res) {  
+fs.readFile('./index.html', function (err, data) {
+    if (err) {
+        throw err;
+    }
+    index = data;
+});
+
+http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.write('hello, i know nodejitsu.\nwhat do you know?');
+  res.write(data);
   res.end();
 }).listen(8000);
 
